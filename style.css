@@ -1,0 +1,125 @@
+body {
+            font-family: Agency fb, sans-serif;
+            text-align: center;
+            background: linear-gradient(45deg, #EE7752, #E73C7E, #23A6D5, #23D5AB);
+            background-size: 400% 400%;
+            animation: gradientAnimation 10s ease infinite;
+        }
+
+        @keyframes gradientAnimation {
+            0% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+
+        h1 {
+            color: #fff;
+        }
+
+        #board-container {
+            width: 330px;
+            margin: 0 auto;
+            margin-top: 50px;
+            border-radius: 00px;
+            overflow: hidden;
+        }
+
+        #board {
+            display: flex;
+            flex-wrap: wrap;
+            width: 100%;
+            height: 100%;
+        }
+
+        .cell {
+            width: 100px;
+            height: 100px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 36px;
+            font-weight: bold;
+            color: #333;
+            cursor: pointer;
+            background-color: #fff;
+            border: 2px solid #333;
+        }
+
+        .cell:hover {
+            background-color: #f9f9f9;
+        }
+
+        .x {
+            color: #f44336;
+        }
+
+        .o {
+            color: #2196f3;
+        }
+
+        #message {
+            margin-top: 30px;
+            font-size: 24px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .winning-cell {
+            background-color: #ff0;
+        }
+
+        .celebration {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.5s;
+        }
+
+        .celebration.active {
+            opacity: 1;
+            pointer-events: all;
+        }
+
+        .confetti {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: #ff0;
+            border-radius: 50%;
+            animation: confetti 3s infinite;
+            transform: translate(-50%, -50%);
+        }
+
+        @keyframes confetti {
+            0% {
+                transform: translate3d(0, -100vh, 0) rotate(0deg);
+                background-color: #f44336;
+            }
+            25% {
+                background-color: #2196f3;
+            }
+            50% {
+                background-color: #4caf50;
+            }
+            75% {
+                background-color: #ffeb3b;
+            }
+            100% {
+                transform: translate3d(0, 100vh, 0) rotate(720deg);
+                background-color: #f44336;
+            }
+        }
